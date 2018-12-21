@@ -115,6 +115,8 @@
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
         
+        [self bringSubviewToFront:currentButton];
+        
         [UIView animateWithDuration:.25 animations:^{
             self.originGesturePoint = [gesture locationInView:currentButton];
             self.originButtonCenter = currentButton.center;

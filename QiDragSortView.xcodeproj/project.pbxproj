@@ -13,6 +13,7 @@
 		0684348721CCB329003AD59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0684348621CCB329003AD59F /* Assets.xcassets */; };
 		0684348A21CCB329003AD59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684348821CCB329003AD59F /* LaunchScreen.storyboard */; };
 		0684348D21CCB329003AD59F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0684348C21CCB329003AD59F /* main.m */; };
+		0684349521CCB47B003AD59F /* QiDragSortView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0684349421CCB47B003AD59F /* QiDragSortView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		0684348921CCB329003AD59F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0684348B21CCB329003AD59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0684348C21CCB329003AD59F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0684349321CCB47B003AD59F /* QiDragSortView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiDragSortView.h; sourceTree = "<group>"; };
+		0684349421CCB47B003AD59F /* QiDragSortView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiDragSortView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				0684347E21CCB327003AD59F /* AppDelegate.m */,
 				0684348021CCB327003AD59F /* ViewController.h */,
 				0684348121CCB327003AD59F /* ViewController.m */,
+				0684349321CCB47B003AD59F /* QiDragSortView.h */,
+				0684349421CCB47B003AD59F /* QiDragSortView.m */,
 				0684348321CCB327003AD59F /* Main.storyboard */,
 				0684348621CCB329003AD59F /* Assets.xcassets */,
 				0684348821CCB329003AD59F /* LaunchScreen.storyboard */,
@@ -143,6 +148,7 @@
 			files = (
 				0684348221CCB327003AD59F /* ViewController.m in Sources */,
 				0684348D21CCB329003AD59F /* main.m in Sources */,
+				0684349521CCB47B003AD59F /* QiDragSortView.m in Sources */,
 				0684347F21CCB327003AD59F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,12 +292,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZX24TX624;
 				INFOPLIST_FILE = QiDragSortView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qishare.QiDragSortView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qishare.ios.hxs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,12 +310,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZX24TX624;
 				INFOPLIST_FILE = QiDragSortView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qishare.QiDragSortView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qishare.ios.hxs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

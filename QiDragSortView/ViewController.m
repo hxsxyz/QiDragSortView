@@ -46,14 +46,4 @@
     [self.view addSubview:dragSortView];
 }
 
-
-#pragma mark - QiDragSortViewDelegate
-
-- (void)dragSortView:(QiDragSortView *)dragSortView didClickedButton:(UIButton *)button {
-    
-    
-}
-
-
-
 @end

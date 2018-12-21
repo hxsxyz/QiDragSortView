@@ -84,9 +84,10 @@
     else {
         sender.selected = !sender.selected;
         sender.layer.borderColor = sender.selected? _selectedColor.CGColor: _normalColor.CGColor;
-        if (_dragSortEnded) {
-            _dragSortEnded(_buttons);
-        }
+    }
+    
+    if (_dragSortEnded) {
+        _dragSortEnded(_buttons);
     }
 }
 

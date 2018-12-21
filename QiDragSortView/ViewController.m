@@ -23,17 +23,17 @@
     dragSortView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:.5];
     
     /*
-    dragSortView.rowHeight = 40.0;
+    dragSortView.rowHeight = 50.0;
     dragSortView.rowMargin = 30.0;
     dragSortView.rowPadding = 20.0;
     
-    dragSortView.columnCount = 3;
+    dragSortView.columnCount = 2;
     dragSortView.columnMargin = 30.0;
     dragSortView.columnPadding = 20.0;
     
-    dragSortView.normalColor = [UIColor yellowColor];
+    dragSortView.normalColor = [UIColor redColor];
     dragSortView.selectedColor = [UIColor purpleColor];
-     */
+    */
     
     dragSortView.titles = @[@"首页推荐", @"奇舞周刊", @"众城翻译", @"QiShare", @"HULK一线杂谈", @"QTest之道", @"首页推荐", @"奇舞周刊", @"众城翻译", @"QiShare", @"HULK一线杂谈", @"ah"];
     
@@ -42,7 +42,7 @@
             NSLog(@"title: %@, selected: %i", button.currentTitle, button.isSelected);
         }
     };
-    
+
     [self.view addSubview:dragSortView];
 }
 

@@ -54,16 +54,16 @@
             self.buttons = [self.buttons subarrayWithRange:(NSRange){0, titles.count}].mutableCopy;
         }
         
-        self.enabledTitles = self.enabledTitles ?: self.titles;
-        self.selectedTitles = self.selectedTitles ?: self.titles;
+        self.enabledTitles = self.enabledTitles ?: titles;
+        self.selectedTitles = self.selectedTitles ?: titles;
         
         for (NSInteger i = 0; i < self.buttons.count; i++) {
             [self.buttons[i] setTitle:titles[i] forState:UIControlStateNormal];
-            [self.buttons[i] addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.buttons[i] addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)]];
-            
-            self.buttons[i].userInteractionEnabled = [self.enabledTitles containsObject:titles[i]];
             [self selectButton:self.buttons[i] forStatus:[self.selectedTitles containsObject:titles[i]]];
+            if ([self.enabledTitles containsObject:titles[i]]) {
+                [self.buttons[i] addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+            }
         }
         
         for (NSInteger i = 0; i < self.buttons.count; i++) {

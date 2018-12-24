@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *normalColor;
 @property (nonatomic, strong) UIColor *selectedColor;
 
+@property (nonatomic, strong) NSArray<NSString *> *enabledTitles;
+@property (nonatomic, strong) NSArray<NSString *> *selectedTitles;
 @property (nonatomic, strong) NSArray<NSString *> *titles;
 
 @property (nonatomic, copy) void(^buttonClicked)(UIButton *button);

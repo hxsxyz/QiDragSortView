@@ -35,7 +35,10 @@
     dragSortView.selectedColor = [UIColor purpleColor];
     */
     
-    dragSortView.titles = @[@"首页推荐", @"奇舞周刊", @"众城翻译", @"QiShare", @"HULK一线杂谈", @"QTest之道", @"首页推荐", @"奇舞周刊", @"众城翻译", @"QiShare", @"HULK一线杂谈", @"ah"];
+    dragSortView.enabledTitles = @[@"奇舞周刊", @"众城翻译", @"QiShare", @"HULK一线杂谈", @"QTest之道"];
+    dragSortView.selectedTitles = @[@"首页推荐", @"HULK一线杂谈", @"QTest之道"];
+    
+    dragSortView.titles = @[@"首页推荐", @"奇舞周刊", @"众城翻译", @"QiShare", @"HULK一线杂谈", @"QTest之道"];
     
     dragSortView.dragSortEnded = ^(NSArray<UIButton *> * _Nonnull buttons) {
         for (UIButton *button in buttons) {

@@ -54,10 +54,16 @@
             self.buttons = [self.buttons subarrayWithRange:(NSRange){0, titles.count}].mutableCopy;
         }
         
+        self.enabledTitles = self.enabledTitles ?: self.titles;
+        self.selectedTitles = self.selectedTitles ?: self.titles;
+        
         for (NSInteger i = 0; i < self.buttons.count; i++) {
             [self.buttons[i] setTitle:titles[i] forState:UIControlStateNormal];
             [self.buttons[i] addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.buttons[i] addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)]];
+            
+            self.buttons[i].userInteractionEnabled = [self.enabledTitles containsObject:titles[i]];
+            [self selectButton:self.buttons[i] forStatus:[self.selectedTitles containsObject:titles[i]]];
         }
         
         for (NSInteger i = 0; i < self.buttons.count; i++) {
@@ -76,14 +82,13 @@
     });
 }
 
-- (void)buttonClicked:(UIButton *)sender {
+- (void)buttonClicked:(UIButton *)button {
     
     if (_buttonClicked) {
-        _buttonClicked(sender);
+        _buttonClicked(button);
     }
     else {
-        sender.selected = !sender.selected;
-        sender.layer.borderColor = sender.selected? _selectedColor.CGColor: _normalColor.CGColor;
+        [self selectButton:button forStatus:!button.selected];
     }
     
     if (_dragSortEnded) {
@@ -91,11 +96,18 @@
     }
 }
 
+- (void)selectButton:(UIButton *)button forStatus:(BOOL)selected {
+    
+    button.selected = selected;
+    button.layer.borderColor = selected? _selectedColor.CGColor: _normalColor.CGColor;
+}
+
 - (UIButton *)buttonWithTag:(NSInteger)tag {
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitleColor:_normalColor forState:UIControlStateNormal];
     [button setTitleColor:_selectedColor forState:UIControlStateSelected];
+    [button setTitleColor:_selectedColor forState:UIControlStateSelected | UIControlStateHighlighted];
     button.titleLabel.font = [UIFont systemFontOfSize:14.0];
     button.titleLabel.adjustsFontSizeToFitWidth = YES;
     button.titleLabel.minimumScaleFactor = .5;
@@ -119,8 +131,8 @@
         [self bringSubviewToFront:currentButton];
         
         [UIView animateWithDuration:.25 animations:^{
-            self.originGesturePoint = [gesture locationInView:currentButton];
             self.originButtonCenter = currentButton.center;
+            self.originGesturePoint = [gesture locationInView:currentButton];
             currentButton.transform = CGAffineTransformScale(currentButton.transform, 1.2, 1.2);
         }];
     }

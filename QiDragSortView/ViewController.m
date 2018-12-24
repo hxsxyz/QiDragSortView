@@ -35,8 +35,10 @@
     dragSortView.selectedColor = [UIColor purpleColor];
     */
     
+    /*
     dragSortView.enabledTitles = @[@"奇舞周刊", @"众城翻译", @"QiShare", @"HULK一线杂谈", @"QTest之道"];
     dragSortView.selectedTitles = @[@"首页推荐", @"HULK一线杂谈", @"QTest之道"];
+    */
     
     dragSortView.titles = @[@"首页推荐", @"奇舞周刊", @"众城翻译", @"QiShare", @"HULK一线杂谈", @"QTest之道"];
     

@@ -10,8 +10,6 @@
 
 @interface QiDragSortView ()
 
-@property (nonatomic, strong) NSMutableArray<UIButton *> *buttons;
-
 @property (nonatomic, assign) CGPoint originGesturePoint;
 @property (nonatomic, assign) CGPoint originButtonCenter;
 
@@ -41,6 +39,8 @@
 }
 
 - (void)setTitles:(NSArray<NSString *> *)titles {
+    
+    _titles = titles;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSInteger differCount = titles.count - self.buttons.count;

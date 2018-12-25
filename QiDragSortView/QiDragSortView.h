@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray<NSString *> *selectedTitles;
 @property (nonatomic, strong) NSArray<NSString *> *titles;
 
+@property (nonatomic, strong) NSMutableArray<UIButton *> *buttons;
+
 @property (nonatomic, copy) void(^buttonClicked)(UIButton *button);
 @property (nonatomic, copy) void(^dragSortEnded)(NSArray<UIButton *> *buttons);
 

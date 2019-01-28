@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) CGFloat rowHeight;//!< 行高
 @property (nonatomic, assign) CGFloat rowMargin;//!< 行边距
-@property (nonatomic, assign) CGFloat rowPadding;//!< 行内距
+@property (nonatomic, assign) CGFloat rowPadding;//!< 行间距
 @property (nonatomic, assign) CGFloat columnMargin;//!< 列边距
-@property (nonatomic, assign) CGFloat columnPadding;//!< 列内距
+@property (nonatomic, assign) CGFloat columnPadding;//!< 列间距
 @property (nonatomic, assign) NSInteger columnCount;//!< 列数
 
 @property (nonatomic, strong) UIColor *normalColor;//!< 按钮基本字体颜色

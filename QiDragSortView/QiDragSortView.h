@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat columnPadding;//!< 列内距
 @property (nonatomic, assign) NSInteger columnCount;//!< 列数
 
-@property (nonatomic, strong) UIColor *normalColor;//!< 按钮基本颜色
-@property (nonatomic, strong) UIColor *selectedColor;//!< 按钮选择颜色
+@property (nonatomic, strong) UIColor *normalColor;//!< 按钮基本字体颜色
+@property (nonatomic, strong) UIColor *selectedColor;//!< 按钮选择字体颜色
 
 @property (nonatomic, strong) NSArray<NSString *> *enabledTitles;//!< 可以被点击的titles（上行参数，默认全选）
 @property (nonatomic, strong) NSArray<NSString *> *selectedTitles;//!< 可以被选择的titles（上行参数，默认全选）

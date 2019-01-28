@@ -10,8 +10,8 @@
 
 @interface QiDragSortView ()
 
-@property (nonatomic, assign) CGPoint originGesturePoint;
-@property (nonatomic, assign) CGPoint originButtonCenter;
+@property (nonatomic, assign) CGPoint originGesturePoint;//!< 手势起源点
+@property (nonatomic, assign) CGPoint originButtonCenter;//!< 按钮起源中心
 
 @end
 

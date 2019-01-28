@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSArray<NSString *> *enabledTitles;//!< 可以被点击的titles（上行参数，默认全选）
 @property (nonatomic, strong) NSArray<NSString *> *selectedTitles;//!< 可以被选择的titles（上行参数，默认全选）
-@property (nonatomic, strong) NSArray<NSString *> *titles;//!< 按钮的Buttons
+@property (nonatomic, strong) NSArray<NSString *> *titles;//!< 按钮的titles
 @property (nonatomic, strong) NSMutableArray<UIButton *> *buttons;//!< 所有的按钮
 
 /*!

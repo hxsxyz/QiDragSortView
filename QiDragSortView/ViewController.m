@@ -22,7 +22,6 @@
     QiDragSortView *dragSortView = [[QiDragSortView alloc] initWithFrame:CGRectMake(.0, 100.0, self.view.bounds.size.width, .0)];
     dragSortView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:.5];
     
-    
     dragSortView.rowHeight = 50.0;
     dragSortView.rowMargin = 30.0;
     dragSortView.rowPadding = 20.0;

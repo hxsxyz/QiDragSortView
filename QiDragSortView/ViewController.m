@@ -29,10 +29,9 @@
     dragSortView.columnPadding = 20.0;
     dragSortView.normalColor = [UIColor redColor];
     dragSortView.selectedColor = [UIColor purpleColor];
-    
-    dragSortView.enabledTitles = @[@"奇舞周刊", @"众成翻译", @"QiShare", @"HULK一线杂谈", @"Qtest之道"];
-    dragSortView.selectedTitles = @[@"首页推荐", @"HULK一线杂谈", @"Qtest之道"];
-    dragSortView.titles = @[@"首页推荐", @"奇舞周刊", @"众成翻译", @"QiShare", @"HULK一线杂谈", @"Qtest之道"];
+    dragSortView.enabledTitles = @[@"奇舞周刊", @"众成翻译", @"QiShare", @"HULK一线杂谈", @"Qtest之道"];//!< 可以点击选择的Buttons（选填，默认全选）
+    dragSortView.selectedTitles = @[@"首页推荐", @"HULK一线杂谈", @"Qtest之道"];//!< 初始选择的Buttons（选填，默认全选）
+    dragSortView.titles = @[@"首页推荐", @"奇舞周刊", @"众成翻译", @"QiShare", @"HULK一线杂谈", @"Qtest之道"];//!< 初始的Buttons（必填）
     
     dragSortView.dragSortEnded = ^(NSArray<UIButton *> * _Nonnull buttons) {
         for (UIButton *button in buttons) {

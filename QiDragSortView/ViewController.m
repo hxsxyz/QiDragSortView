@@ -21,21 +21,17 @@
     
     QiDragSortView *dragSortView = [[QiDragSortView alloc] initWithFrame:CGRectMake(.0, 100.0, self.view.bounds.size.width, .0)];
     dragSortView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:.5];
-    
     dragSortView.rowHeight = 50.0;
     dragSortView.rowMargin = 30.0;
     dragSortView.rowPadding = 20.0;
-    
-    dragSortView.columnCount = 2;
+    dragSortView.columnCount = 3;
     dragSortView.columnMargin = 30.0;
     dragSortView.columnPadding = 20.0;
-    
     dragSortView.normalColor = [UIColor redColor];
     dragSortView.selectedColor = [UIColor purpleColor];
     
-//    dragSortView.enabledTitles = @[@"奇舞周刊", @"众成翻译", @"QiShare", @"HULK一线杂谈", @"QTest之道"];
-//    dragSortView.selectedTitles = @[@"首页推荐", @"HULK一线杂谈", @"QTest之道"];
-    
+    dragSortView.enabledTitles = @[@"奇舞周刊", @"众成翻译", @"QiShare", @"HULK一线杂谈", @"Qtest之道"];
+    dragSortView.selectedTitles = @[@"首页推荐", @"HULK一线杂谈", @"Qtest之道"];
     dragSortView.titles = @[@"首页推荐", @"奇舞周刊", @"众成翻译", @"QiShare", @"HULK一线杂谈", @"Qtest之道"];
     
     dragSortView.dragSortEnded = ^(NSArray<UIButton *> * _Nonnull buttons) {

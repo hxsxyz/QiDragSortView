@@ -12,22 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QiDragSortView : UIView
 
-<<<<<<< HEAD
-@property (nonatomic, assign) CGFloat rowHeight;
-@property (nonatomic, assign) CGFloat rowMargin;
-@property (nonatomic, assign) CGFloat rowPadding;
-@property (nonatomic, assign) CGFloat columnMargin;
-@property (nonatomic, assign) CGFloat columnPadding;
-@property (nonatomic, assign) NSInteger columnCount;
-
-@property (nonatomic, strong) UIColor *normalColor;
-@property (nonatomic, strong) UIColor *selectedColor;
-
-@property (nonatomic, strong) NSArray<NSString *> *enabledTitles;
-@property (nonatomic, strong) NSArray<NSString *> *selectedTitles;
-@property (nonatomic, strong) NSArray<NSString *> *titles;
-
-=======
 @property (nonatomic, assign) CGFloat rowHeight;//!< 行高
 @property (nonatomic, assign) CGFloat rowMargin;//!< 行边距
 @property (nonatomic, assign) CGFloat rowPadding;//!< 行间距
@@ -46,7 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  @brief 按钮点击事件回调
  */
->>>>>>> 3659464905d7f6268d17b621027324a275c8b722
 @property (nonatomic, copy) void(^buttonClicked)(UIButton *button);
 
 /*!

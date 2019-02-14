@@ -10,6 +10,8 @@
 
 @interface QiDragSortView ()
 
+@property (nonatomic, strong) NSMutableArray<UIButton *> *buttons;//!< 所有的按钮
+
 @property (nonatomic, assign) CGPoint originGesturePoint;//!< 手势初始点
 @property (nonatomic, assign) CGPoint originButtonCenter;//!< 按钮初始中心位置
 

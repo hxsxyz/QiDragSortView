@@ -10,8 +10,8 @@
 
 @interface QiDragSortView ()
 
-@property (nonatomic, assign) CGPoint originGesturePoint;
-@property (nonatomic, assign) CGPoint originButtonCenter;
+@property (nonatomic, assign) CGPoint originGesturePoint;//!< 手势初始点
+@property (nonatomic, assign) CGPoint originButtonCenter;//!< 按钮初始中心位置
 
 @end
 
@@ -46,20 +46,24 @@
         NSInteger differCount = titles.count - self.buttons.count;
         
         if (differCount > 0) {
-            for (NSInteger i = self.buttons.count; i < differCount; i++) {
+            for (NSInteger i = self.buttons.count; i < titles.count; i++) {
                 [self.buttons addObject:[self buttonWithTag:i]];
             }
         }
         else if (differCount < 0) {
-            self.buttons = [self.buttons subarrayWithRange:(NSRange){0, titles.count}].mutableCopy;
+            NSArray *extraButtons = [self.buttons subarrayWithRange:(NSRange){titles.count, self.buttons.count - titles.count}];
+            [self.buttons removeObjectsInArray:extraButtons];
+            for (UIButton *button in extraButtons) {
+                [button removeFromSuperview];
+            }
         }
         
-        self.enabledTitles = self.enabledTitles ?: titles;
+        self.enabledTitles = self.enabledTitles ?: titles;//!< 如果有，就传入，否则传入titles
         self.selectedTitles = self.selectedTitles ?: titles;
         
         for (NSInteger i = 0; i < self.buttons.count; i++) {
             [self.buttons[i] setTitle:titles[i] forState:UIControlStateNormal];
-            [self.buttons[i] addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)]];
+            [self.buttons[i] addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)]];//!< 长按手势
             [self selectButton:self.buttons[i] forStatus:[self.selectedTitles containsObject:titles[i]]];
             if ([self.enabledTitles containsObject:titles[i]]) {
                 [self.buttons[i] addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -122,6 +126,7 @@
     return button;
 }
 
+//! 长按手势
 - (void)longPress:(UILongPressGestureRecognizer *)gesture {
     
     UIButton *currentButton = (UIButton *)gesture.view;

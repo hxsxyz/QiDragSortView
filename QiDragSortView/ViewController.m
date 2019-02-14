@@ -33,13 +33,6 @@
     dragSortView.selectedTitles = @[@"首页推荐", @"HULK一线杂谈", @"Qtest之道"];//!< 初始选择的Buttons（选填，默认全选）
     dragSortView.titles = @[@"首页推荐", @"奇舞周刊", @"众成翻译", @"QiShare", @"HULK一线杂谈", @"Qtest之道"];//!< 初始的Buttons（必填）
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        dragSortView.titles = @[@"123", @"首页推荐"];
-    });
-    
-    
-    
-    
     dragSortView.dragSortEnded = ^(NSArray<UIButton *> * _Nonnull buttons) {
         for (UIButton *button in buttons) {
             NSLog(@"title: %@, selected: %i", button.currentTitle, button.isSelected);

@@ -37,8 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) void(^dragSortEnded)(NSArray<UIButton *> *buttons);
 
-@property (nonatomic, strong) NSMutableArray<UIButton *> *buttons;
-
 @end
 
 NS_ASSUME_NONNULL_END
